@@ -1,6 +1,6 @@
 baseURL = 'https://coreycedricallen.com/'
 languageCode = 'en-us'
-title = 'Corey Cedric Allen'
+title = "Corey Cedric Allen"
 
 [params]
   # (Optional, default light) Sets color theme: light, dark or auto.
