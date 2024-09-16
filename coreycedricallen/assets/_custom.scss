@@ -1,0 +1,168 @@
+/* You can add custom styles here. */
+
+// @import "plugins/numbered";
+
+html {
+  font-size: 14px;
+}
+
+.book-menu {
+  nav > ul > li {
+    border-bottom: 1px dashed var(--body-font-color);
+    padding: 14px 0;
+
+    > span {
+      font-weight: bolder;
+    } 
+  }
+  a.active {
+    color: var(--body-font-color);
+    text-decoration: underline;
+  }
+}
+
+a, aside nav ul a {
+  text-underline-offset: 4px;
+  &:hover, &:focus {
+    font-style: italic;
+    opacity: 1;
+  }
+}
+
+.book-page {
+  min-width: $body-min-width;
+  flex-grow: 1;
+  padding: $padding-30;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.book-article {
+  flex-grow: 1;
+}
+
+.book-header {
+  display: none;
+  margin-bottom: $padding-16;
+
+  label {
+    line-height: 0;
+  }
+
+  img.book-icon {
+    width: 20px;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  #menu-control,
+  #toc-control {
+    display: inline;
+  }
+
+  .book-menu {
+    visibility: hidden;
+    margin-inline-start: -$menu-width;
+    font-size: $font-size-base;
+    z-index: 1;
+  }
+
+  .book-toc {
+    display: none;
+  }
+
+  .book-header {
+    display: block;
+  }
+
+  #menu-control:focus ~ main label[for="menu-control"] {
+    @include outline;
+  }
+
+  #menu-control:checked ~ main {
+    .book-menu {
+      visibility: initial;
+    }
+
+    .book-menu .book-menu-content {
+      transform: translateX($menu-width);
+      box-shadow: 0 0 $padding-8 rgba(0, 0, 0, 0.1);
+      padding: $padding-30;
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      > nav {
+        width: 100%;
+        max-width: 200px;
+      }
+      > label .close-icon {
+        display: block;
+        max-width: 14px;
+        margin: 5px;
+      }
+    }
+
+    .book-page {
+      opacity: 0.25;
+    }
+
+    .book-menu-overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  #toc-control:focus ~ main label[for="toc-control"] {
+    @include outline;
+  }
+
+  #toc-control:checked ~ main {
+    .book-header aside {
+      display: block;
+    }
+  }
+
+  // for RTL support
+  body[dir="rtl"] #menu-control:checked ~ main {
+    .book-menu .book-menu-content {
+      transform: translateX(-$menu-width);
+    }
+  }
+}
+
+.image-caption {
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    margin-top: 0;
+    font-size: 14px;
+  }
+}
+
+#toTop {
+  cursor: pointer;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  img {
+    width: 120px;
+  }
+}
+
+.book-footer {
+  margin-top: 50px;
+  padding-top: 0;
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+}

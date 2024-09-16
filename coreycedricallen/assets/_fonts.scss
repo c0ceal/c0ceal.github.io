@@ -1,0 +1,44 @@
+/* frances light */
+@font-face {
+  font-family: 'Frances';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local(''),
+       url('fonts/Fraunces_144pt_Soft-Light.ttf') format('truetype');
+}
+
+/* frances light italic */
+@font-face {
+  font-family: 'Frances';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local(''),
+       url('fonts/Fraunces_144pt_Soft-LightItalic.ttf') format('truetype');
+}
+
+/* frances semi-bold */
+@font-face {
+  font-family: 'Frances';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local(''),
+       url('fonts/Fraunces_144pt_Soft-SemiBold.ttf') format('truetype');
+}
+
+/* frances semi-bold italic */
+@font-face {
+  font-family: 'Frances';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local(''),
+       url('fonts/Fraunces_144pt_Soft-SemiBoldItalic.ttf') format('truetype');
+}
+
+
+body {
+  font-family: 'Frances', serif;
+}
