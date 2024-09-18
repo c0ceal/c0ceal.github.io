@@ -18,7 +18,9 @@
   {{ partial "docs/inject/menu-after" . }}
 </nav>
 <label for="menu-control">
-  <img src="{{ "svg/close-menu.svg" | relURL }}" class="book-icon close-icon" alt="Close Menu" />
+  {{ with resources.Get "svg/close-menu.svg" }}
+    <img src="{{ .RelPermalink }}" class="book-icon close-icon" alt="Close Menu" />
+  {{ end }}
 </label>
 
 <!-- Restore menu position as soon as possible to avoid flickering -->

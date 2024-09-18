@@ -6,6 +6,10 @@ html {
   font-size: 14px;
 }
 
+.align-start {
+  align-items: flex-start;
+}
+
 .book-brand {
   img {
     height: auto;
@@ -59,6 +63,7 @@ a, aside nav ul a {
 
   label {
     line-height: 0;
+    margin-top: 10px;
   }
 
   img.book-icon {
@@ -104,15 +109,18 @@ a, aside nav ul a {
       width: 100vw;
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: flex-start;
       > nav {
         width: 100%;
         max-width: 200px;
       }
-      > label .close-icon {
-        display: block;
-        max-width: 14px;
-        margin: 5px;
+      > label {
+        margin-top: 10px;
+        .close-icon {
+          display: block;
+          max-width: 14px;
+          margin: 5px;
+        }
       }
     }
 

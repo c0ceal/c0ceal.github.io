@@ -1,8 +1,12 @@
-<div class="flex align-center justify-between">
+<div class="flex align-start justify-between">
   
-  <strong>{{ partial "docs/title" . }}</strong>
+  {{- with .Site.Params.BookLogo -}}
+    <img src="{{ . | relURL }}" alt="Logo" />
+  {{- end -}}
   
   <label for="menu-control">
-    <img src="{{ "svg/hamburger-menu.svg" | relURL }}" class="book-icon menu-icon" alt="Open Menu" />
+    {{ with resources.Get "svg/hamburger-menu.svg" }}
+      <img src="{{ .RelPermalink }}" class="book-icon menu-icon" alt="Open Menu" />
+    {{ end }}
   </label>
 </div>
