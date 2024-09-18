@@ -6,6 +6,17 @@ html {
   font-size: 14px;
 }
 
+.book-brand {
+  img {
+    height: auto;
+    width: auto;
+    margin: 0;
+  }
+  span {
+    display: none;
+  }
+}
+
 .book-menu {
   nav > ul > li {
     border-bottom: 1px dashed var(--body-font-color);
