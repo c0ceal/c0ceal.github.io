@@ -1,4 +1,4 @@
-<figure {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+<figure class="w-fit{{ with .Get "class" }} {{ . }}{{ end }}">
     {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
       <img src="{{ .Get "src" }}" 
       {{ if or (.Get "alt") (.Get "caption") }}
